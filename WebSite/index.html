@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>Hurtov Oleksii</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+      var sizes = new Array(0,1,2,4,8);
+      sizes.pos = 0;
+    
+function Elastic()
+{
+    var el = document.all.elastic
+    if (null == el.direction)el.direction = 1
+    else if ((sizes.pos > sizes.length - 2) || (0 == sizes.pos))
+    el.direction *= -1
+    el.style.letterSpacing = sizes[sizes.pos += el.direction]
+setTimeout('Elastic()',100)
+}
+</SCRIPT>
+
+<BODY  background="images/background.jpg"  onLoad=Elastic()>
+
+<CENTER>
+<font color="white">
+<H1 ID="elastic" ALIGN="Center">EPAM DevOps online Summer 2021</H1>
+<font size=4 color=magenta>
+
+<p><img src="images/My_photo.png"></p>
+
+<TABLE BORDER=solid CELLPADDING=5  style="background-color:rgba(0, 0, 0, 0)">
+
+<td><font color="gold" size=+2>My Curriculum Vitae</td><td><center><font color="lime" size=+2>HurtovOleksii_CV.doc</td><tr>
+<td><font color="gold" size=+2>Linkedin Profile</td><td><font color="lime"><center><a href="https://www.linkedin.com/" target="_blank">  
+<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0"></a></td><tr>
+<td><font color="gold" size=+2>My Final Project for EPAM DevOps online Summer 2021<br>
+<font color="white" size=+1></td><td>
+</td><tr></tr>
+
+<td th colspan="2"><font color="gold" size=+2>
+<a href="https://aws.amazon.com/ru/getting-started/hands-on/?awsf.getting-started-content-type=content-type%23hands-on&?e=gs2020&p=gsrc&awsf.getting-started-category=*all&awsf.getting-started-level=*all"><font color="white">Tutorials</a> or <a href="https://amazon.qwiklabs.com/"><font color="white">qwiklabs</a> which I have completed:<br>
+<font color="white" size=+1>
+1. <a href="https://aws.amazon.com/ru/getting-started/hands-on/backup-files-to-amazon-s3/"><font color="white">Store and Retrieve a File with Amazon S3</a><br>
+2. <a href="https://aws.amazon.com/ru/getting-started/hands-on/launch-a-wordpress-website/?trk=gs_card"><font color="white">Launch and configure a WordPress instance with Amazon Lightsail</a><br>
+3. <a href="https://aws.amazon.com/getting-started/hands-on/launch-a-virtual-machine/?nc1=h_ls"><font color="white">Launch a Linux Virtual Machine with Amazon Lightsail</a><br>
+4. <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/welcome.html"><font color="white">AWS Quick Start Guide: Launch a Linux Virtual Machine</a><br>
+5. <a href="https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls"><font color="white">Batch upload files to the cloud to Amazon S3 using the AWS CLI </a><br>
+6. <a href="https://aws.amazon.com/getting-started/hands-on/get-a-domain/?nc1=h_ls"><font color="white">Register a Domain Name with Amazon Route 53 </a><br>
+7. <a href="https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls"><font color="white">Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS) </a><br>
+8. <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html"><font color="white">Configuring a static website on Amazon S3 </a><br>
+9. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html"><font color="white">Amazon EBS snapshots</a><br>
+10. <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html"><font color="white">Requesting a public certificate</a><br>
+11. <a href="https://amazon.qwiklabs.com/focuses/18123?parent=catalog"><font color="white">Introduction to AWS Identity and Access Management (IAM)</a><br>
+12. <a href="https://amazon.qwiklabs.com/focuses/17876?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11881331"><font color="white">Introduction to Amazon EC2</a><br>
+13. <a href="https://amazon.qwiklabs.com/focuses/16438?parent=catalog"><font color="white">Introduction to Amazon Simple Storage Service (S3)</a><br>
+14. <a href="https://amazon.qwiklabs.com/focuses/18253?catalog_rank=%7B%22rank%22%3A2%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11888128"><font color="white">Introduction to Elastic Load Balancing</a><br>
+15. <a href="https://amazon.qwiklabs.com/focuses/14125?catalog_rank=%7B%22rank%22%3A3%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11888128"><font color="white">Working with Elastic Load Balancing</a><br>
+16. <a href="https://amazon.qwiklabs.com/focuses/14834?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11889466"><font color="white">Introduction to Amazon EC2 Auto Scaling</a><br>
+17. <a href="https://amazon.qwiklabs.com/focuses/16314?catalog_rank=%7B%22rank%22%3A3%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11895499#"><font color="white">Introduction to Amazon Virtual Private Cloud (VPC)</a><br>
+18. <a href="https://amazon.qwiklabs.com/focuses/16447?catalog_rank=%7B%22rank%22%3A2%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11897986"><font color="white">Introduction to AWS CloudFormation</a><br>
+19. <a href="https://amazon.qwiklabs.com/focuses/16506?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11912549"><font color="white">Introduction to AWS Lambda</a><br>
+20. <a href="https://amazon.qwiklabs.com/focuses/17786?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=11927724#ssh-after"><font color="white">Introduction to Amazon Relational Database Service (RDS) (Windows)</a><br>
+</td>
+</TABLE>
+</body>
+</HTML>
