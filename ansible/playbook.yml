@@ -1,7 +1,5 @@
 ---
-- name: Install Docker and deploy site to container
-  wait_for_connection:
-  hosts: all
+- hosts: all
   become: yes
   gather_facts: no
 
