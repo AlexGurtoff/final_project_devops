@@ -40,9 +40,9 @@ resource "aws_instance" "WebServer" {
   instance_type   = var.instance_type
   vpc_security_group_ids = [aws_security_group.web.id]
   key_name = var.key_name
-  provisioner "local-exec" {
-    command = "echo Hello from AWS Instance"
-  }
+//  provisioner "local-exec" {
+//    command = "echo Hello from AWS Instance"
+//  }
 
   tags = {
     Name = "WebServer"
