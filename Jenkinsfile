@@ -12,8 +12,10 @@ pipeline {
         stage('Test'){
             steps {
                 dir("terraform") {
+				withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+					sh 'terraform init'
+				}
                     sh 'pwd'
-                    sh 'terraform init'
                     sh 'terraform apply -auto-approve'
                     }
             }
