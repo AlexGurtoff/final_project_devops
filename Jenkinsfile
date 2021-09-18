@@ -1,7 +1,8 @@
 pipeline {
     agent any
 	environment {
-	THE_BUTLER_SAYS_SO=credentials('Admin-AWS')
+	AWS_KEYS=credentials('Admin-AWS')
+	AUTHORIZED_KEY=credentials('Hurtov-Paris')
 	}
     options {
         skipStagesAfterUnstable()
@@ -11,7 +12,6 @@ pipeline {
             steps {
                 dir("terraform") {
 					sh 'terraform init'
-                    sh 'pwd'
                     sh 'terraform apply -auto-approve'
                     }
             }
@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy'){
             steps {
                 dir("ansible") {
-					sh 'ansible-playbook playbook.yml'
+					sh "ansible-playbook playbook.yml --extravars \"ssh_key_data=${AUTHORIZED_KEY}\""
                     }
             }
         }
