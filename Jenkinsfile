@@ -2,7 +2,6 @@ pipeline {
     agent any
 	environment {
 	AWS_KEYS=credentials('Admin-AWS')
-	AUTHORIZED_KEY=credentials('Hurtov-Paris')
 	}
     options {
         skipStagesAfterUnstable()
