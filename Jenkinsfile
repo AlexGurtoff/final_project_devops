@@ -1,5 +1,6 @@
 pipeline {
     agent any
+	tool name: 'terraform-11', type: 'terraform'
     options {
         skipStagesAfterUnstable()
     }
@@ -11,9 +12,9 @@ pipeline {
         }
         stage('Test'){
             steps {
-				sh 'cd /home/ubuntu/final_project/terraform'
+				sh 'cd terraform'
 				sh 'pwd'
-				sh 'terraform apply --auto-approve'
+				sh 'terraform init'
 				sh 'pwd'
             }
         }
