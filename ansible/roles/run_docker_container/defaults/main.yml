@@ -1,2 +1,5 @@
 ---
 # defaults file for run_docker_container
+apache_port: 80
+source_file: /home/ubuntu/final_project/WebSite
+destination_file: /home/ubuntu/WebSite

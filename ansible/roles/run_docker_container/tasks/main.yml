@@ -1,2 +1,17 @@
 ---
 # tasks file for run_docker_container
+- name: Copy WebSite to Servers
+  copy:
+    src: "{{ source_file }}"
+    dest: "{{ destination_file }}"
+    mode: 0555
+- name: Create apache container
+  docker_container:
+    name: apache
+    image: httpd:2.4
+    state: started
+    recreate: yes
+    volumes:
+      - /home/ubuntu/WebSite:/usr/local/apache2/htdocs/
+    published_ports:
+      - "{{ apache_port }}:{{ apache_port }}"
