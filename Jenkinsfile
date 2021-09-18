@@ -7,12 +7,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') {
-            steps {
-                sh 'whoami'
-            }
-        }
-        stage('Test'){
+        stage('Create infrastructure') {
             steps {
                 dir("terraform") {
 					sh 'terraform init'
@@ -21,9 +16,11 @@ pipeline {
                     }
             }
         }
-        stage('Deploy') {
+        stage('Deploy'){
             steps {
-                sh 'echo deploy stage'
+                dir("ansible") {
+					sh 'ansible-playbook playbook.yml'
+                    }
             }
         }
     }
