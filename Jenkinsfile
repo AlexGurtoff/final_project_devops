@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment {
+	THE_BUTLER_SAYS_SO=credentials('Admin-AWS')
+	}
     options {
         skipStagesAfterUnstable()
     }
@@ -12,9 +15,7 @@ pipeline {
         stage('Test'){
             steps {
                 dir("terraform") {
-				withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
 					sh 'terraform init'
-				}
                     sh 'pwd'
                     sh 'terraform apply -auto-approve'
                     }
