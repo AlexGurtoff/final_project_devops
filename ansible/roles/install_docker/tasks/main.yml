@@ -4,6 +4,9 @@
   - name: Wait for system to become reachable
     wait_for_connection:
 
+  - name: Gather facts for first time
+    setup:
+
   - name: Install aptitude using apt
     apt:
       name: aptitude
