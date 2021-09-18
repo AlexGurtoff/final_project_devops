@@ -16,12 +16,14 @@ pipeline {
                     }
             }
         }
+        stage('Create ansible') {
         ansiblePlaybook(
         playbook: 'ansible/playbook.yml',
         inventory: 'ansible/inventory',
         credentialsId: 'Hurtov-Paris',
         hostKeyChecking: false
     )
+    }
 //         stage('Deploy'){
 //             steps {
 //                 dir("ansible") {
