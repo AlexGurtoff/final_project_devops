@@ -11,10 +11,11 @@ pipeline {
         }
         stage('Test'){
             steps {
-				sh 'cd terraform'
-				sh 'pwd'
-				sh 'terraform init'
-				sh 'pwd'
+                dir("terraform") {
+                    sh 'pwd'
+                    sh 'terraform init'
+                    sh 'terraform apply -auto-approve'
+                    }
             }
         }
         stage('Deploy') {
