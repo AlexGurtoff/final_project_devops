@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'uptime'
+                sh 'whoami'
             }
         }
         stage('Test'){
