@@ -16,12 +16,18 @@ pipeline {
                     }
             }
         }
-        stage('Deploy'){
-            steps {
-                dir("ansible") {
-					sh "ansible-playbook playbook.yml --extravars \"ssh_key_data=${AUTHORIZED_KEY}\""
-                    }
-            }
-        }
+        ansiblePlaybook(
+        playbook: 'ansible/playbook.yml',
+        inventory: 'ansible/inventory',
+        credentialsId: 'Hurtov-Paris',
+        hostKeyChecking: false
+    )
+//         stage('Deploy'){
+//             steps {
+//                 dir("ansible") {
+// 					sh "ansible-playbook playbook.yml"
+//                     }
+//             }
+//         }
     }
 }
