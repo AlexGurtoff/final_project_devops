@@ -1,6 +1,9 @@
 ---
 # tasks file for install_docker
 
+  - name: Wait for system to become reachable
+    wait_for_connection:
+
   - name: Install aptitude using apt
     apt:
       name: aptitude
