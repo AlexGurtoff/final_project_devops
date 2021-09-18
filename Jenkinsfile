@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'echo test stageeeeeee'
+                dir('/home/ubuntu/final_project/terraform') {
+				sh 'terraform apply --auto-approve'
+				}
             }
         }
         stage('Deploy') {
