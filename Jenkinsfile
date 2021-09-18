@@ -12,7 +12,9 @@ pipeline {
         stage('Test'){
             steps {
 				sh 'cd /home/ubuntu/final_project/terraform'
+				sh 'pwd'
 				sh 'terraform apply --auto-approve'
+				sh 'pwd'
             }
         }
         stage('Deploy') {
