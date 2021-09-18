@@ -19,6 +19,7 @@ data "aws_ami" "latest_ubuntu_linux" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 }
+
 #=========================================================
 resource "aws_eip" "my_static_ip" {
   instance = aws_instance.WebServer.id
@@ -26,10 +27,12 @@ resource "aws_eip" "my_static_ip" {
 
 resource "aws_instance" "WebServer" {
   ami = data.aws_ami.latest_ubuntu_linux.id
-  instance_type   = "t2.micro"
+  instance_type   = var.instance_type
   vpc_security_group_ids = [aws_security_group.web.id]
+  key_name = var.key_name
   tags = {
     Name = "WebServer"
+    Owner = var.owner
   }
   lifecycle {
     create_before_destroy = true
@@ -57,6 +60,6 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name  = "Dynamic SecurityGroup"
-    Owner = "Alex Hurtov"
+    Owner = var.owner
   }
 }
