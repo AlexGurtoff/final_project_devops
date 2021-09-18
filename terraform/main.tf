@@ -24,25 +24,22 @@ data "aws_ami" "latest_ubuntu_linux" {
 resource "aws_eip" "my_static_ip" {
   instance = aws_instance.WebServer.id
 }
-//resource "null_resource" "connect" {
-//  provisioner "remote-exec" {
-//      inline = ["echo hi"]
-//    connection {
-//      host = aws_eip.my_static_ip.public_ip
-//      type        = "ssh"
-//      user        = "ubuntu"
-//      private_key = file("Hurtov-Paris.pem")
-//    }
-//  }
-//}
+resource "null_resource" "connect" {
+  provisioner "remote-exec" {
+      inline = ["echo hi"]
+    connection {
+      host = aws_eip.my_static_ip.public_ip
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("Hurtov-Paris.pem")
+    }
+  }
+}
 resource "aws_instance" "WebServer" {
   ami = data.aws_ami.latest_ubuntu_linux.id
   instance_type   = var.instance_type
   vpc_security_group_ids = [aws_security_group.web.id]
   key_name = var.key_name
-  provisioner "local-exec" {
-    command = "echo Hello from AWS Instance"
-  }
 
   tags = {
     Name = "WebServer"
