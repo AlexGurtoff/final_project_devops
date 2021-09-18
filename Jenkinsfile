@@ -1,6 +1,5 @@
 pipeline {
     agent any
-	tool name: 'terraform-11', type: 'terraform'
     options {
         skipStagesAfterUnstable()
     }
