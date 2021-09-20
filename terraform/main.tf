@@ -57,6 +57,7 @@ resource "aws_launch_configuration" "web" {
   name_prefix     = "WebServer-Highly-Available-LC-"
   image_id        = data.aws_ami.latest_ubuntu_linux.id
   instance_type   = "t2.micro"
+  key_name = var.key_name
   security_groups = [aws_security_group.web.id]
 
   lifecycle {
