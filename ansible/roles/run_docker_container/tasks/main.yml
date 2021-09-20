@@ -4,7 +4,7 @@
   copy:
     src: "{{ source_file }}"
     dest: "{{ destination_file }}"
-    mode: 0555
+    mode: 0777
 - name: Create apache container
   docker_container:
     name: apache
@@ -15,3 +15,9 @@
       - /home/ubuntu/WebSite:/usr/local/apache2/htdocs/
     published_ports:
       - "{{ apache_port }}:{{ apache_port }}"
+
+- name: Add private IP to index.htm
+  shell: |
+    cd /home/ubuntu/WebSite
+    myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
+    echo $myip >> index.html
