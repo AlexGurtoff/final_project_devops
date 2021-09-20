@@ -7,5 +7,5 @@ resource "local_file" "AnsibleInventory" {
   WebServer-name = aws_instance.WebServer.tags.Name
  }
  )
- filename = "../ansible/inventory"
+ filename = "/var/lib/jenkins/inventory"
 }
