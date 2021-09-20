@@ -48,7 +48,7 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name  = "Dynamic SecurityGroup"
-    Owner = "Hurtov Oleksii"
+    Owner = "Hurtov Oleksii!"
   }
 }
 
