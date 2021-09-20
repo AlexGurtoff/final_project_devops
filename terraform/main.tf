@@ -3,6 +3,13 @@ provider "aws" {
   region = "eu-west-3"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "hurtov-oleksii-project-terraform"
+    key = "server/terraform.tfstate"
+    region = "eu-west-3"
+  }
+}
 
 data "aws_availability_zones" "available" {}
 data "aws_ami" "latest_ubuntu_linux" {
