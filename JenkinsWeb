@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Deploy'){
             steps {
-            ansiblePlaybook credentialsId: 'Hurtov-Paris', disableHostKeyChecking: true, inventory: 'ansible/inventory', playbook: 'ansible/playbook_deploy.yml'
+            ansiblePlaybook credentialsId: 'Hurtov-Paris', disableHostKeyChecking: true, inventory: '/var/lib/jenkins/inventory', playbook: 'ansible/playbook_deploy.yml'
             }
         }
     }
