@@ -1,2 +1,4 @@
 [WebServer]
-${WebServer-name} ansible_host=${WebServer-ip} # ${WebServer-id}
+%{ for index, names in WebServer-ip ~}
+${names} ansible_host=${WebServer-ip[index]}
+%{ endfor ~}
