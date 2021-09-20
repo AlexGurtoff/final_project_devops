@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-            ansiblePlaybook credentialsId: 'Hurtov-Paris', disableHostKeyChecking: true, inventory: 'ansible/inventory', playbook: 'ansible/playbook.yml'
+            ansiblePlaybook credentialsId: 'Hurtov-Paris', disableHostKeyChecking: true, inventory: '/var/lib/jenkins/inventory', playbook: 'ansible/playbook.yml'
             }
         }
     }
