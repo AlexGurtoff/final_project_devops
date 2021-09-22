@@ -48,7 +48,7 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name  = "Dynamic SecurityGroup"
-    Owner = "Hurtov Oleksii!"
+    Owner = var.owner
   }
 }
 
@@ -56,7 +56,7 @@ resource "aws_security_group" "web" {
 resource "aws_launch_configuration" "web" {
   name_prefix     = "WebServer-Highly-Available-LC-"
   image_id        = data.aws_ami.latest_ubuntu_linux.id
-  instance_type   = "t2.micro"
+  instance_type   = var.instance_type
   key_name = var.key_name
   security_groups = [aws_security_group.web.id]
 
@@ -79,7 +79,7 @@ resource "aws_autoscaling_group" "web" {
   dynamic "tag" {
     for_each = {
       Name   = "WebServer in ASG"
-      Owner  = "Hurtov Oleksii"
+      Owner  = var.owner
     }
     content {
       key                 = tag.key
