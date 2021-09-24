@@ -24,6 +24,10 @@ data "aws_instances" "my_instances" {
   instance_tags = {
     Name   = "WebServer in ASG"
   }
+  filter {
+    name = "instance-state-code"
+    values = ["0","16"]
+  }
   depends_on = [aws_autoscaling_group.web, aws_launch_configuration.web,aws_elb.web]
 }
 #--------------------------------------------------------------
