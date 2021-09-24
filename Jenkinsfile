@@ -9,13 +9,10 @@ pipeline {
     stages {
         stage('Create infrastructure') {
             steps {
-                dir("terraform/create_webserver") {
+                dir("terraform") {
 					sh 'terraform init'
                     sh 'terraform apply -auto-approve'
-                    }
-				dir("terraform/create_inventory") {
-					sh 'terraform init'
-                    sh 'terraform apply -auto-approve'
+					sh 'terraform apply -auto-approve'
                     }
             }
         }
