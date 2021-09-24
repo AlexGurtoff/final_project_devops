@@ -28,9 +28,10 @@ data "aws_instances" "my_instances" {
     name = "instance-state-code"
     values = ["0","16"]
   }
-  depends_on = [aws_autoscaling_group.web, aws_launch_configuration.web,aws_elb.web]
+  depends_on = [aws_autoscaling_group.web,aws_launch_configuration.web,aws_elb.web]
 }
 #--------------------------------------------------------------
+
 resource "aws_security_group" "web" {
   name = "Dynamic Security Group"
 
