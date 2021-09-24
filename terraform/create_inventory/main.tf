@@ -1,4 +1,16 @@
 ### The Ansible inventory file
+provider "aws" {
+  region = "eu-west-3"
+}
+
+terraform {
+  backend "s3" {
+    bucket = "hurtov-oleksii-project-terraform"
+    key = "server/terraform.tfstate"
+    region = "eu-west-3"
+  }
+}
+
 data "aws_instances" "my_instances" {
   instance_tags = {
     Name   = "WebServer in ASG"
