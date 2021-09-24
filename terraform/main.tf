@@ -59,7 +59,7 @@ resource "aws_launch_configuration" "web" {
   instance_type   = var.instance_type
   key_name = var.key_name
   security_groups = [aws_security_group.web.id]
-  user_data = "echo Hello World"
+  user_data = "echo Hello World1"
 
   lifecycle {
     create_before_destroy = true
