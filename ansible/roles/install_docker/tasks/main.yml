@@ -2,7 +2,8 @@
 # tasks file for install_docker
   - name: Wait for system to become reachable
     wait_for_connection:
-      timeout: 15
+      timeout: 5
+    ignore_errors: yes
 
   - name: Gather facts for first time
     setup:
