@@ -1,2 +1,2 @@
 ## Scheme
-![](http://joxi.ru/L21BXjgiz38x9A)
+![](http://dl3.joxi.net/drive/2021/09/30/0048/0762/3175162/62/5c6d6ec38a.png)
